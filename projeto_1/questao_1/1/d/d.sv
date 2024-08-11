@@ -4,3 +4,4 @@ module e(
 );
 assign y=A&B|B&C|A&C;
 endmodule
+//A xor B xor C
