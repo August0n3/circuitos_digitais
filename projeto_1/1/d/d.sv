@@ -3,4 +3,5 @@ module e(
     output x,y
 );
 assign y=A&B|B&C|A&C;
+assign x=A^B^C;
 endmodule
