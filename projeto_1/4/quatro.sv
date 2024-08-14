@@ -1,6 +1,6 @@
 module quatro(
     input logic T,
-    input logic Hh,
+    input logic H,
     input logic F,
     input logic U,
     output logic X
