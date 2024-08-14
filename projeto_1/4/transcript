@@ -1,2 +1,12 @@
 # Compile of quatro.sv failed with 1 errors.
 # Compile of quatro.sv was successful.
+vsim -gui work.quatro
+# vsim -gui work.quatro 
+# Start time: 14:53:00 on Aug 14,2024
+# Loading sv_std.std
+# Loading work.quatro
+add wave -position end  sim:/quatro/T
+add wave -position end  sim:/quatro/H
+add wave -position end  sim:/quatro/F
+add wave -position end  sim:/quatro/U
+add wave -position end  sim:/quatro/X
