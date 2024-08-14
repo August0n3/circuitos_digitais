@@ -1,4 +1,4 @@
-module e(
+module d(
     input A,B,C,
     output x,y
 );
