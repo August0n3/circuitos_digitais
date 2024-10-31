@@ -24,4 +24,5 @@ module registrador_de_carga_paralela (
             q <= q_next;
         end
     end
+    end
 endmodule
