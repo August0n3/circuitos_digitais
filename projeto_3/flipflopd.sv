@@ -6,10 +6,10 @@ module flipflopd (
 );
     
     always @(posedge clk, rst) begin
-        if (rst) begin
-            q <= 1'b0;
+        if (rst == 1'b1) begin
+            q = 1'b0;
         end else begin
-            q <= d;
+            q = d;
         end
     end
 

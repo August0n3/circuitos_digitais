@@ -4,7 +4,7 @@ module fsm(
     output logic x,y,z
 );
 
-    typedef enum logic { 
+    typedef enum logic[0:7] { 
         estado0,
         estado1,
         estado2,
@@ -25,38 +25,37 @@ module fsm(
         end
     end
 
-    always (estado_atual) begin
-        always_comb begin
+    always @(estado_atual) begin
             case (estado_atual)
                 estado0: begin
                     estado_proximo = estado1;
                     x = 1'b0; y = 1'b0; z = 1'b0;
                 end
                 estado1: begin
-                    estado_proximo = estado3;
+                    estado_proximo = estado2;
                     x = 1'b0; y = 1'b0; z = 1'b1;
                 end
-                estado3: begin
-                    estado_proximo = estado2;
+                estado2: begin
+                    estado_proximo = estado3;
                     x = 1'b0; y = 1'b1; z = 1'b1;
                 end
-                estado2: begin
-                    estado_proximo = estado6;
+                estado3: begin
+                    estado_proximo = estado4;
                     x = 1'b0; y = 1'b1; z = 1'b0;
+                end
+                estado4: begin
+                    estado_proximo = estado5;
+                    x = 1'b1; y = 1'b1; z = 1'b0;
+                end
+                estado5: begin
+                    estado_proximo = estado6;
+                    x = 1'b1; y = 1'b1; z = 1'b1;
                 end
                 estado6: begin
                     estado_proximo = estado7;
-                    x = 1'b1; y = 1'b1; z = 1'b0;
-                end
-                estado7: begin
-                    estado_proximo = estado5;
-                    x = 1'b1; y = 1'b1; z = 1'b1;
-                end
-                estado5: begin
-                    estado_proximo = estado4;
                     x = 1'b1; y = 1'b0; z = 1'b1;
                 end
-                estado4: begin
+                estado7: begin
                     estado_proximo = estado0;
                     x = 1'b1; y = 1'b0; z = 1'b0;
                 end
@@ -65,7 +64,7 @@ module fsm(
                     x = 1'b0; y = 1'b0; z = 1'b0;
                 end
             endcase
-        end
+     
     end
         
         
